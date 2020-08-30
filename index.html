@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8b681eaa53.js" crossorigin="anonymous"></script>
     <title>Play Ludo Online</title>
 </head>
 
@@ -19,115 +20,190 @@
         <!-- https://playcode.io/659836/ -->
         <!-- https://codepen.io/vishalmishra090/pen/ExKmbRG -->
         <!-- https://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css -->
-        <div class = "wrap-box">
-       
+        <div class="wrap-box">
+
             <div class="game-coantiner">
-    
+
                 <div class="row row1">
-    
-                    <div class="red-zone in-area col">
-                        <div class="row row1">
-                            <div class="col col1">
-                                <div id="r-circle"></div>
+                    <div id="wrap-in-area">
+                        <div class="red-zone in-area col">
+                            <div class="row row1">
+                                <div class="col col1">
+                                    <div id="r-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="r-circle"></div>
+                                </div>
                             </div>
-                            <div class="col col2">
-                                <div id="r-circle"></div>
+                            <div class="row row2">
+                                <div class="col col1">
+                                    <div id="r-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="r-circle"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row row2">
-                            <div class="col col1">
-                                <div id="r-circle"></div>
-                            </div>
-                            <div class="col col2">
-                                <div id="r-circle"></div>
-                            </div>
-                        </div>
-                        
                     </div>
+
                     <div class="btw-g-r out-area col">
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col"></div>
-                           <div class="col"></div>
-                       </div>
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col g-out-box"></div>
-                           <div class="col g-out-box"></div>
-                       </div>
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col g-out-box"></div>
-                           <div class="col"></div>
-                       </div>
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col g-out-box"></div>
-                           <div class="col"></div>
-                       </div>
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col g-out-box"></div>
-                           <div class="col"></div>
-                       </div>
-                       <div class="row">
-                           <div class="col"></div>
-                           <div class="col g-out-box"></div>
-                           <div class="col"></div>
-                       </div>
-                    </div>
-                    <div class="green-zone in-area col">
-                        <div class="row row1">
-                            <div class="col col1">
-                                <div id="g-circle"></div>
+                        <div class="row">
+                            <div class="col">
+                                <div></div>
                             </div>
-                            <div class="col col2">
-                                <div id="g-circle"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
                             </div>
                         </div>
-                        <div class="row row2">
-                            <div class="col col1">
-                                <div id="g-circle"></div>
+                        <div class="row">
+                            <div class="col">
+                                <div></div>
                             </div>
-                            <div class="col col2">
-                                <div id="g-circle"></div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="star-stop"></div>
+                            </div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="g-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
                             </div>
                         </div>
                     </div>
-    
+                    <div id="wrap-in-area">
+                        <div class="green-zone in-area col">
+                            <div class="row row1">
+                                <div class="col col1">
+                                    <div id="g-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="g-circle"></div>
+                                </div>
+                            </div>
+                            <div class="row row2">
+                                <div class="col col1">
+                                    <div id="g-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="g-circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-    
+
                 <div class="row row2">
-    
+
                     <div class="btw-r-b out-area col col1">
-                        <div class = "row">
-                            <div class="col"></div>
-                            <div class="col r-out-box"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
+                        <div class="row">
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
                         </div>
-                        <div class = "row">
-                            <div class="col"></div>
-                            <div class="col r-out-box"></div>
-                            <div class="col r-out-box"></div>
-                            <div class="col r-out-box"></div>
-                            <div class="col r-out-box"></div>
-                            <div class="col r-out-box"></div>
+                        <div class="row">
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="r-out-box"></div>
+                            </div>
                         </div>
-                        <div class = "row">
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
+                        <div class="row">
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="star-stop"></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="win-area col col2">
-                        <div class = "row row1">
+                        <div class="row row1">
                             <div class="col col1"></div>
                             <div class="col col2"></div>
                         </div>
@@ -135,115 +211,190 @@
                             <div class="col col1"></div>
                             <div class="col col2"></div>
                         </div>
-                        
+
                     </div>
 
                     <div class="btw-y-g out-area col col3">
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="star-stop"></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col y-out-box"></div>
-                            <div class="col y-out-box"></div>
-                            <div class="col y-out-box"></div>
-                            <div class="col y-out-box"></div>
-                            <div class="col y-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col y-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
+                            <div class="col"> 
+                                <div id="y-out-box"></div>
+                            </div>
+                            <div class="col"> 
+                                <div></div>
+                            </div>
                         </div>
-                        
+
                     </div>
-    
+
                 </div>
-    
+
                 <div class="row row3">
-    
-                    <div class="blue-zone in-area col">
-                        <div class="row row1">
-                            <div class="col col1">
-                                <div id="b-circle"></div>
+                    <div id="wrap-in-area">
+                        <div class="blue-zone in-area col">
+                            <div class="row row1">
+                                <div class="col col1">
+                                    <div id="b-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="b-circle"></div>
+                                </div>
                             </div>
-                            <div class="col col2">
-                                <div id="b-circle"></div>
-                            </div>
-                        </div>
-                        <div class="row row2">
-                            <div class="col col1">
-                                <div id="b-circle"></div>
-                            </div>
-                            <div class="col col2">
-                                <div id="b-circle"></div>
+                            <div class="row row2">
+                                <div class="col col1">
+                                    <div id="b-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="b-circle"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="btw-b-y out-area col">
-                        
+
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col b-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col b-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col b-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col b-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div id="star-stop"></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col b-out-box"></div>
-                            <div class="col b-out-box"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div id="b-out-box"></div>
+                            </div>
+                            <div class="col">
+                                <div ></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col"></div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
+                            <div class="col">
+                                <div></div>
+                            </div>
                         </div>
-                        
-    
+
+
                     </div>
-                    <div class="yellow-zone in-area col">
-                        <div class="row row1">
-                            <div class="col col1">
-                                <div id="y-circle"></div>
+                    <div id="wrap-in-area">
+                        <div class="yellow-zone in-area col">
+                            <div class="row row1">
+                                <div class="col col1">
+                                    <div id="y-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="y-circle"></div>
+                                </div>
                             </div>
-                            <div class="col col2">
-                                <div id="y-circle"></div>
-                            </div>
-                        </div>
-                        <div class="row row2">
-                            <div class="col col1">
-                                <div id="y-circle"></div>
-                            </div>
-                            <div class="col col2">
-                                <div id="y-circle"></div>
+                            <div class="row row2">
+                                <div class="col col1">
+                                    <div id="y-circle"></div>
+                                </div>
+                                <div class="col col2">
+                                    <div id="y-circle"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
-    
+
             </div>
         </div>
     </main>
