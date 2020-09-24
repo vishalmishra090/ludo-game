@@ -1,6 +1,12 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
 
 body {
-    padding: 10px;
+    width: 100%;
+    height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,6 +25,7 @@ h1 {
 
 main {
     max-width: 800px;
+    height: 100%;
     position: relative;
     margin: auto;
 }
@@ -29,27 +36,36 @@ main div {
 
 .game-container{
     position: relative;
-    max-width: 600px;
-    margin: auto;
+    max-width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .wrap-box {
     position: relative;
     width: 100%;
     height: 0;
-    padding-top: 100%;
+    padding-top: 125%;
+    
+}
+
+.game-box{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
 }
 
 .ludo-board {
-    position: absolute;
+    display: inline-block;
     width: 100%;
-    height: 100%;
+    height: 80%;
     background: black;
     padding: 0.2%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
 .row {
@@ -236,124 +252,73 @@ main div {
 
 .r-circle {
     background: #ED2027;
+    position: relative;
     border-radius: 50%;
     width: 100%;
     height: 100%;
 }
 
-.r-pawn1 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 0%;
-    background-position-y: 66.66%;
-}
 
-.r-pawn2 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 33.33%;
-    background-position-y: 66.66%;
-}
 
-.r-pawn3 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 66.66%;
-    background-position-y: 66.66%;
+.r-pawn::before{
+        
+        background: url(../images/pawns.png);
+        background-repeat: no-repeat;
+        background-size: 380%;
+        background-position-x: 0%;
+        background-position-y: 66.66%;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scale(0.8);
 }
-
-.r-pawn4 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 100%;
-    background-position-y: 66.66%;
-}
-
 
 /* Green Section */
 
 .g-circle {
     background: #05A24B;
     border-radius: 50%;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-.g-pawn1 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 0%;
-    background-position-y: 33.33%;
+.g-pawn::before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-image: url("../images/pawns.png");
+   background-repeat: no-repeat;
+   background-size: 380%;
+   background-position-x: 0%;
+   background-position-y: 33.33%;
+   transform: scale(0.8);
 }
 
-.g-pawn2 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 33.33%;
-    background-position-y: 33.33%;
-}
-
-.g-pawn3 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 66.66%;
-    background-position-y: 33.33%;
-}
-
-.g-pawn4 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 100%;
-    background-position-y: 33.33%;
-}
 
 /* Yellow Section */
 
 .y-circle {
     background: #FFDE05;
     border-radius: 50%;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-.y-pawn1 {
+.y-pawn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-image: url("../images/pawns.png");
     background-repeat: no-repeat;
     background-size: 380%;
     background-position-x: 0%;
     background-position-y: 100%;
-}
-
-.y-pawn2 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 33.33%;
-    background-position-y: 100%;
-}
-
-.y-pawn3 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 66.66%;
-    background-position-y: 100%;
-}
-
-.y-pawn4 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 100%;
-    background-position-y: 100%;
+    transform: scale(0.8);
 }
 
 /* Blue Section */
@@ -361,42 +326,23 @@ main div {
 .b-circle {
     background: #254399;
     border-radius: 50%;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-.b-pawn1 {
+.b-pawn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-image: url("../images/pawns.png");
     background-repeat: no-repeat;
     background-size: 380%;
     background-position-x: 0%;
     background-position-y: 0%;
+    transform: scale(0.8);
 }
-
-.b-pawn2 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 33.33%;
-    background-position-y: 0%;
-}
-
-.b-pawn3 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 66.66%;
-    background-position-y: 0%;
-}
-
-.b-pawn4 {
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 100%;
-    background-position-y: 0%;
-}
-
 
 /* Star */
 
@@ -405,4 +351,90 @@ main div {
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: 80% !important;
+}
+
+.dice-container {
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    background: white
+}
+
+.dice-container-top{
+   transform: translateY(-10px);
+}
+.dice-container-bottom{
+    transform: translateY(10px);
+}
+
+.dice-container .col1,
+.dice-container .col3 {
+    width: 12.5%;
+    height: 100%;
+    background-color: green;
+}
+
+.dice-container .col2 {
+    width: 75%;
+}
+
+.diceBox{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.greenDiceBox {
+    background: #05A24B;
+}
+
+.redDiceBox {
+    background: #ED2027;
+}
+
+.blueDiceBox {
+    background: #254399;
+}
+
+.yellowDiceBox {
+    background: #FFDE05;
+}
+.startDiceRoll{
+     background-image: url(../images/start_dice_roll2.png);
+     background-size: 100%;
+     background-repeat: no-repeat;
+}
+.rollDice{
+    background-image: url(../images/dice_roll.png);
+    background-repeat: no-repeat;
+    background-size: 600%;
+    background-position-x: 0%;
+    background-position-y: 0%;
+}
+.showDice{
+    background-image: url(../images/dice.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position-x: 0%;
+    background-position-y: 0%;
+}
+
+
+/* Animation Section */
+.glow::before {
+    animation-name: example;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes example {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
