@@ -42,21 +42,21 @@
      
                          <div class="row row1">
                              <div id="wrap-in-area">
-                                 <div class="red-zone in-area col">
+                                 <div class="red-zone in-area col" id="rPlayer">
                                      <div class="row row1">
                                          <div class="col col1">
-                                             <div class="r-circle r-pawn1" id="in-r-1"></div>
+                                             <div class="r-circle pawn-box" id="in-r-1"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="r-circle r-pawn2" id="in-r-2"></div>
+                                             <div class="r-circle pawn-box" id="in-r-2"></div>
                                          </div>
                                      </div>
                                      <div class="row row2">
                                          <div class="col col1">
-                                             <div class="r-circle r-pawn3" id="in-r-3"></div>
+                                             <div class="r-circle pawn-box" id="in-r-3"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="r-circle r-pawn4" id="in-r-4"></div>
+                                             <div class="r-circle pawn-box" id="in-r-4"></div>
                                          </div>
                                      </div>
                                  </div>
@@ -131,21 +131,21 @@
                                  </div>
                              </div>
                              <div id="wrap-in-area">
-                                 <div class="green-zone in-area col">
+                                 <div class="green-zone in-area col" id="gPlayer">
                                      <div class="row row1">
                                          <div class="col col1">
-                                             <div class="g-circle g-pawn1" id="in-g-1"></div>
+                                             <div class="g-circle pawn-box" id="in-g-1"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="g-circle g-pawn2" id="in-g-2"></div>
+                                             <div class="g-circle pawn-box" id="in-g-2"></div>
                                          </div>
                                      </div>
                                      <div class="row row2">
                                          <div class="col col1">
-                                             <div class="g-circle g-pawn3" id="in-g-3"></div>
+                                             <div class="g-circle pawn-box" id="in-g-3"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="g-circle g-pawn4" id="in-g-4"></div>
+                                             <div class="g-circle pawn-box" id="in-g-4"></div>
                                          </div>
                                      </div>
                                  </div>
@@ -219,15 +219,18 @@
                              </div>
      
                              <div class="win-area col col2">
-                                 <div class="row row1">
-                                     <div class="col col1"></div>
-                                     <div class="col col2"></div>
-                                 </div>
-                                 <div class="row row2">
-                                     <div class="col col1"></div>
-                                     <div class="col col2"></div>
-                                 </div>
-     
+                                <div class="win-box" id="win-box1">
+                                    <div class="win-pawn-box" id="g-win-pawn-box"></div>
+                                </div>
+                                <div class="win-box" id="win-box2">
+                                    <div class="win-pawn-box" id="y-win-pawn-box"></div>
+                                </div>
+                                <div class="win-box" id="win-box3">
+                                    <div class="win-pawn-box" id="b-win-pawn-box"></div>
+                                </div>
+                                <div class="win-box" id="win-box4">
+                                    <div class="win-pawn-box" id="r-win-pawn-box"></div>
+                                </div>
                              </div>
      
                              <div class="btw-y-g out-area col col3">
@@ -298,21 +301,21 @@
      
                          <div class="row row3">
                              <div id="wrap-in-area">
-                                 <div class="blue-zone in-area col">
+                                 <div class="blue-zone in-area col" id="bPlayer">
                                      <div class="row row1">
                                          <div class="col col1">
-                                             <div class="b-circle b-pawn1" id="in-b-1"></div>
+                                             <div class="b-circle pawn-box" id="in-b-1"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="b-circle b-pawn2" id="in-b-2"></div>
+                                             <div class="b-circle pawn-box" id="in-b-2"></div>
                                          </div>
                                      </div>
                                      <div class="row row2">
                                          <div class="col col1">
-                                             <div class="b-circle b-pawn3" id="in-b-3"></div>
+                                             <div class="b-circle pawn-box" id="in-b-3"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="b-circle b-pawn4" id="in-b-4"></div>
+                                             <div class="b-circle pawn-box" id="in-b-4"></div>
                                          </div>
                                      </div>
                                  </div>
@@ -389,21 +392,21 @@
      
                              </div>
                              <div id="wrap-in-area">
-                                 <div class="yellow-zone in-area col">
+                                 <div class="yellow-zone in-area col" id="yPlayer">
                                      <div class="row row1">
                                          <div class="col col1">
-                                             <div class="y-circle y-pawn1" id="in-y-1"></div>
+                                             <div class="y-circle pawn-box" id="in-y-1"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="y-circle y-pawn2" id="in-y-2"></div>
+                                             <div class="y-circle pawn-box" id="in-y-2"></div>
                                          </div>
                                      </div>
                                      <div class="row row2">
                                          <div class="col col1">
-                                             <div class="y-circle y-pawn3" id="in-y-3"></div>
+                                             <div class="y-circle pawn-box" id="in-y-3"></div>
                                          </div>
                                          <div class="col col2">
-                                             <div class="y-circle y-pawn4" id="in-y-4"></div>
+                                             <div class="y-circle pawn-box" id="in-y-4"></div>
                                          </div>
                                      </div>
                                  </div>
@@ -428,6 +431,13 @@
 
         </div>
     </main>
+    <div id="preload">
+        <img src="images/dice_roll.png" />
+        <img src="images/dice.png" />
+        <img src="images/pawns.png" />
+        <img src="images/star2.png" />
+        <img src="images/start_dice_roll2.png" />
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script/ludo-game2.js"></script>
 </body>

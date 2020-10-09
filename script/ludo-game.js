@@ -126,11 +126,6 @@ function checkEnd() {
   return false;
 }
 
-// function checkCut(){
-
-// }
-
-
 
 function nextPlayer() {
   if (playerNo == 4) playerNo = 0;

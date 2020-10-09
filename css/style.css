@@ -1,223 +1,272 @@
-html{
-    width: 100%;
-    height: 100%;
+html {
+  width: 100%;
+  height: 100%;
 }
 
-
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
 /* sprites images READ ABOUT IT */
 
 header {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
 }
 
 h1 {
-    font-size: 180%;
+  font-size: 180%;
 }
 
 main {
-    max-width: 800px;
-    height: 100%;
-    position: relative;
-    margin: auto;
+  max-width: 800px;
+  height: 100%;
+  position: relative;
+  margin: auto;
 }
 main div {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-.game-container{
-    position: relative;
-    max-width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.game-container {
+  position: relative;
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .wrap-box {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 125%;
-    
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 125%;
 }
 
-.game-box{
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
+.game-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .ludo-board {
-    display: inline-block;
-    width: 100%;
-    height: 80%;
-    background: black;
-    padding: 0.2%;
+  display: inline-block;
+  width: 100%;
+  height: 80%;
+  background-color: black;
+  padding: 0.2%;
 }
 
 .row {
-    font-size: 0;
+  font-size: 0;
 }
 
 .row .col {
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .row1,
 .row3 {
-    width: 100%;
-    height: 40%;
+  width: 100%;
+  height: 40%;
 }
 
 .row2 {
-    width: 100%;
-    height: 20%;
+  width: 100%;
+  height: 20%;
 }
 
 #wrap-in-area {
-    width: 40%;
-    height: 100%;
-    background: black;
-    padding: 0.2%;
-    display: inline-block;
-    vertical-align: middle;
+  width: 40%;
+  height: 100%;
+  background-color: black;
+  padding: 0.2%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .in-area {
-    background: chartreuse;
-    padding: 12%;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  padding: 12%;
+  width: 100%;
+  height: 100%;
+}
+
+.in-area .badge-box{
+    position: absolute;
+    width: 76%;
+    height: 76%;
+    background-color: white;
+    top: 12%;
+    left: 12%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
 }
 
 .row1 .out-area,
 .row3 .out-area {
-    width: 20%;
-    height: 100%;
-    background: black;
-    padding: 0;
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  padding: 0;
 }
 
 .row2 .out-area {
-    width: 40%;
-    height: 100%;
-    background: black;
+  width: 40%;
+  height: 100%;
+  background-color: black;
 }
 
 .win-area {
-    width: 20%;
-    height: 100%;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .red-zone {
-    background-color: #ED2027;
+  background-color: #ed2027;
 }
 
 .green-zone {
-    background-color: #05A24B;
+  background-color: #05a24b;
 }
 
 .blue-zone {
-    background-color: #254399;
+  background-color: #254399;
 }
 
 .yellow-zone {
-    background-color: #FFDE05;
+  background-color: #ffde05;
 }
 
 .btw-g-r .row,
 .btw-b-y .row {
-    width: 100%;
-    height: calc(100% / 6);
+  width: 100%;
+  height: calc(100% / 6);
 }
 
 .btw-g-r .row .col,
 .btw-b-y .row .col {
-    width: calc(100% / 3);
-    height: 100%;
-    padding: 1%;
-    background: black;
-    font-size: 0;
+  width: calc(100% / 3);
+  height: 100%;
+  padding: 1%;
+  background-color: black;
+  font-size: 0;
 }
 
 .btw-g-r .row .col div,
 .btw-b-y .row .col div {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: white;
-    border-radius: 5%;
-    display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  border-radius: 5%;
+  display: inline-block;
+}
+.btw-g-r .row .col div div,
+.btw-b-y .row .col div div {
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
 }
 
 .btw-r-b .row,
 .btw-y-g .row {
-    width: 100%;
-    height: calc(100% / 3);
+  width: 100%;
+  height: calc(100% / 3);
 }
 
 .btw-r-b .row .col,
 .btw-y-g .row .col {
-    width: calc(100% / 6);
-    height: 100%;
-    background: black;
-    padding: 0.5%;
-    font-size: 0;
+  width: calc(100% / 6);
+  height: 100%;
+  background-color: black;
+  padding: 0.5%;
+  font-size: 0;
 }
 
 .btw-r-b .row .col div,
 .btw-y-g .row .col div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  border-radius: 5%;
+  display: inline-block;
+}
+.btw-r-b .row .col div div,
+.btw-y-g .row .col div div {
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+}
+
+.pawn-box div {
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+}
+
+.win-area .win-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: bottom right;
+  padding: 0.5%;
+  
+}
+.win-box .win-pawn-box{
     width: 100%;
     height: 100%;
     position: relative;
-    background: white;
-    border-radius: 5%;
-    display: inline-block;
 }
-
-.win-area .row {
-    width: 100%;
-    height: 50%;
-    background: black;
+.win-box .win-pawn-box div{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    background-color: transparent;
 }
-
-.win-area .row .col {
-    width: 50%;
-    height: 100%;
+#win-box1 {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-
-.win-area .row1 .col1 {
-    background: linear-gradient(to left bottom, #05A24B 0%, #05A24B 49%, black 49%, black 50%, transparent 50%),
-        linear-gradient(to right top, #ED2027 0%, #ED2027 49%, black 49%, black 50%, transparent 50%)
+#g-win-pawn-box {
+  background-color: #05a24b;
 }
-
-.win-area .row1 .col2 {
-    background: linear-gradient(to right bottom, #05A24B 0%, #05A24B 49%, black 49%, black 50%, transparent 50%),
-        linear-gradient(to left top, #FFDE05 0%, #FFDE05 49%, black 49%, black 50%, transparent 50%);
+#win-box2 {
+  transform: translate(-50%, -50%) rotate(135deg);
 }
-
-.win-area .row2 .col1 {
-    background: linear-gradient(to left top, #254399 0%, #254399 49%, black 49%, black 50%, transparent 50%),
-        linear-gradient(to right bottom, #ED2027 0%, #ED2027 49%, black 49%, black 50%, transparent 50%)
+#y-win-pawn-box {
+  background-color: #ffde05;
 }
-
-.win-area .row2 .col2 {
-    background: linear-gradient(to right top, #254399 0%, #254399 49%, black 49%, black 50%, transparent 50%),
-        linear-gradient(to left bottom, #FFDE05 0%, #FFDE05 49%, black 49%, black 50%, transparent 50%);
+#win-box3 {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+#b-win-pawn-box {
+  background-color: #254399;
+}
+#win-box4 {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+#r-win-pawn-box {
+  background-color: #ed2027;
 }
 
 #out14,
@@ -226,7 +275,7 @@ main div {
 #g-out-3,
 #g-out-4,
 #g-out-5 {
-    background: #05A24B !important;
+  background-color: #05a24b;
 }
 
 #out1,
@@ -235,7 +284,7 @@ main div {
 #r-out-3,
 #r-out-4,
 #r-out-5 {
-    background: #ED2027 !important;
+  background-color: #ed2027;
 }
 
 #out40,
@@ -244,7 +293,7 @@ main div {
 #b-out-3,
 #b-out-4,
 #b-out-5 {
-    background: #254399 !important;
+  background-color: #254399;
 }
 
 #out27,
@@ -253,245 +302,209 @@ main div {
 #y-out-3,
 #y-out-4,
 #y-out-5 {
-    background: #FFDE05 !important;
+  background-color: #ffde05;
 }
 
-
 .in-area .row {
-    width: 100%;
-    height: 50%;
-    background: white;
+  width: 100%;
+  height: 50%;
+  background: white;
 }
 
 .in-area .row .col {
-    width: 50%;
-    height: 100%;
-    padding: 10%;
-    background: white;
+  width: 50%;
+  height: 100%;
+  padding: 10%;
+  background: white;
 }
 
 /* Red Section */
 
 .r-circle {
-    background: #ED2027 !important;
-    position: relative;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
+  background-color: #ed2027;
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
-
-/* .r-pawn1::before,
-.r-pawn2::before,
-.r-pawn3::before,
-.r-pawn4::before {
-
-    background: url(../images/pawns.png);
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 0%;
-    background-position-y: 66.66%;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: scale(0.8);
-} */
-
 
 .r-pawn1,
 .r-pawn2,
 .r-pawn3,
 .r-pawn4 {
-        
-        background: url(../images/pawns.png);
-        background-repeat: no-repeat;
-        background-size: 380%;
-        background-position-x: 0%;
-        background-position-y: 66.66%;
-        /* content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transform: scale(0.8); */
+  background-image: url("../images/pawns.png");
+  background-repeat: no-repeat;
+  background-size: 380%;
+  background-position-x: 0%;
+  background-position-y: 66.66%;
 }
 
 /* Green Section */
 
 .g-circle {
-    background: #05A24B;
-    border-radius: 50%;
-    position: relative;
-    width: 100%;
-    height: 100%;
+  background: #05a24b;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.g-pawn1::before,
-.g-pawn2::before,
-.g-pawn3::before,
-.g-pawn4::before {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background-image: url("../images/pawns.png");
-   background-repeat: no-repeat;
-   background-size: 380%;
-   background-position-x: 0%;
-   background-position-y: 33.33%;
-   transform: scale(0.8);
+.g-pawn1,
+.g-pawn2,
+.g-pawn3,
+.g-pawn4 {
+  background-image: url("../images/pawns.png");
+  background-repeat: no-repeat;
+  background-size: 380%;
+  background-position-x: 0%;
+  background-position-y: 33.33%;
 }
-
 
 /* Yellow Section */
 
 .y-circle {
-    background: #FFDE05;
-    border-radius: 50%;
-    position: relative;
-    width: 100%;
-    height: 100%;
+  background: #ffde05;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.y-pawn1::before,
-.y-pawn2::before,
-.y-pawn3::before,
-.y-pawn4::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 0%;
-    background-position-y: 100%;
-    transform: scale(0.8);
+.y-pawn1,
+.y-pawn2,
+.y-pawn3,
+.y-pawn4 {
+  background-image: url("../images/pawns.png");
+  background-repeat: no-repeat;
+  background-size: 380%;
+  background-position-x: 0%;
+  background-position-y: 100%;
 }
 
 /* Blue Section */
 
 .b-circle {
-    background: #254399;
-    border-radius: 50%;
-    position: relative;
-    width: 100%;
-    height: 100%;
+  background: #254399;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.b-pawn1::before,
-.b-pawn2::before,
-.b-pawn3::before,
-.b-pawn4::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/pawns.png");
-    background-repeat: no-repeat;
-    background-size: 380%;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    transform: scale(0.8);
+.b-pawn1,
+.b-pawn2,
+.b-pawn3,
+.b-pawn4 {
+  background-image: url("../images/pawns.png");
+  background-repeat: no-repeat;
+  background-size: 380%;
+  background-position-x: 0%;
+  background-position-y: 0%;
 }
 
 /* Star */
 
+#out1,
 #out48,
 #out9,
 #out22,
 #out35,
-#out1,
 #out14,
 #out27,
-#out40{
-    background-image: url(../images/star.svg) !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: 80% !important;
+#out40 {
+  background-image: url("../images/star2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
 }
 
 .dice-container {
-    display: inline-block;
-    width: 100%;
-    height: 10%;
-    background: white
+  display: inline-block;
+  width: 100%;
+  height: 10%;
+  background: white;
 }
 
-.dice-container-top{
-   transform: translateY(-10px);
+.dice-container-top {
+  transform: translateY(-10px);
 }
-.dice-container-bottom{
-    transform: translateY(10px);
+.dice-container-bottom {
+  transform: translateY(10px);
 }
 
 .dice-container .col1,
 .dice-container .col3 {
-    width: 12.5%;
-    height: 100%;
-    background-color: green;
+  width: 12.5%;
+  height: 100%;
+  background-color: green;
 }
 
 .dice-container .col2 {
-    width: 75%;
+  width: 75%;
 }
 
-.diceBox{
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+.diceBox {
+  width: 100%;
+  height: 100%;
 }
-
 
 .greenDiceBox {
-    background: #05A24B;
+  background: #05a24b;
 }
 
 .redDiceBox {
-    background: #ED2027;
+  background: #ed2027;
 }
 
 .blueDiceBox {
-    background: #254399;
+  background: #254399;
 }
 
 .yellowDiceBox {
-    background: #FFDE05;
+  background: #ffde05;
 }
-.startDiceRoll{
-     background-image: url(../images/start_dice_roll2.png);
-     background-size: 100%;
-     background-repeat: no-repeat;
+.startDiceRoll {
+  background-image: url(../images/start_dice_roll2.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
-.rollDice{
-    background-image: url(../images/dice_roll.png);
-    background-repeat: no-repeat;
-    background-size: 600%;
-    background-position-x: 0%;
-    background-position-y: 0%;
+.rollDice {
+  background-image: url(../images/dice_roll.png);
+  background-repeat: no-repeat;
+  background-size: 600%;
+  background-position-x: 0%;
+  background-position-y: 0%;
 }
-.showDice{
-    background-image: url(../images/dice.png);
-    background-repeat: no-repeat;
-    background-size: 200%;
-    background-position-x: 0%;
-    background-position-y: 0%;
+.showDice {
+  background-image: url(../images/dice.png);
+  background-repeat: no-repeat;
+  background-size: 200%;
+  background-position-x: 0%;
+  background-position-y: 0%;
 }
-
 
 /* Animation Section */
-.glow::before {
-    animation-name: example;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+.glow {
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
 }
 
 @keyframes example {
-    from {
-        transform: scale(0.8);
-    }
+  from {
+    transform: scale(0.8);
+  }
 
-    to {
-        transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
+
+div#preload {
+  display: none;
+}
+
+
