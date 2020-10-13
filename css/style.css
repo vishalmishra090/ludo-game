@@ -8,7 +8,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+  background-color: burlywood;
 }
 
 /* sprites images READ ABOUT IT */
@@ -308,14 +308,14 @@ main div {
 .in-area .row {
   width: 100%;
   height: 50%;
-  background: white;
+  background-color: white;
 }
 
 .in-area .row .col {
   width: 50%;
   height: 100%;
   padding: 10%;
-  background: white;
+  background-color: white;
 }
 
 /* Red Section */
@@ -422,7 +422,7 @@ main div {
   display: inline-block;
   width: 100%;
   height: 10%;
-  background: white;
+  background: transparent;
 }
 
 .dice-container-top {
@@ -436,11 +436,11 @@ main div {
 .dice-container .col3 {
   width: 12.5%;
   height: 100%;
-  background-color: green;
 }
 
 .dice-container .col2 {
   width: 75%;
+  height: 100%;
 }
 
 .diceBox {
@@ -505,6 +505,106 @@ main div {
 
 div#preload {
   display: none;
+}
+
+/* Home box css */
+
+#home-container{
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+#home{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-70%);
+}
+
+#game-logo {
+    margin: 50px auto;
+    color: royalblue;
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#game-logo img{
+    width: 50px;
+    height: 50px;
+}
+
+#noOfplayerBox{
+    margin: 50px auto;
+}
+.noOfPlayer{
+  display: inline-block;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+  border: 5px solid black;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+
+.selected{
+  transform: scale(1.2);
+  background-color: lightgreen;  
+  cursor: default;
+}
+
+#startGame{
+   font-family: 'Fredoka One', cursive;
+   display: inline-block;
+   padding: 5px 15px;
+   font-size: 24px;
+   background-color: yellow;
+   color: red;
+   border: 5px solid black;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+#settingsContiner{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+}
+
+.setting{
+    width: 8.335%;
+    height: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+    margin: 0 10%;
+    padding: 0;
+    cursor: pointer;
+}
+#sound{
+    background-image: url(../images/sound-on.svg);
+}
+#restart{
+    background-image: url(../images/restart2.svg);
+}
+.setting:focus{
+    outline: none;
+    border: none;
 }
 
 

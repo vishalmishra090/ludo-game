@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/ludoFavicon.ico" type="image/x-icon">
     <title>Play Ludo Online</title>
@@ -14,6 +15,25 @@
     <!-- <header>
         <h1>Play Ludo Online</h1>
     </header> -->
+    <div id="home-container">
+       <div id="home">
+           <div id="game-logo">
+               <div>
+                   <img src="images/gameLogo.svg" alt="Play Ludo Online">
+               </div>
+               <div>
+                   Play Ludo Online
+               </div>
+           </div>
+           <div id="noOfplayerBox">
+               <div id="twoPlayer" class="noOfPlayer">2P</div>
+               <div id="threePlayer" class="noOfPlayer">3P</div>
+               <div id="fourPlayer" class="noOfPlayer selected">4P</div>
+           </div>
+           <button id="startGame">Start</button>
+       </div>
+    </div>
+    
     <main>
 
         <div class="game-container">
@@ -31,7 +51,12 @@
                           <div class="col1 col">
                               <div class="diceBox redDiceBox" id="redDice"></div>
                           </div>
-                          <div class="col2 col"></div>
+                          <div class="col2 col">
+                              <div id="settingsContiner">
+                                  <button id="sound" class="setting"></button>
+                                  <button id="restart" class="setting"></button>
+                              </div>
+                          </div>
                           <div class="col3 col">
                               <div class="diceBox greenDiceBox" id="greenDice"></div>
                           </div>
@@ -437,6 +462,8 @@
         <img src="images/pawns.png" />
         <img src="images/star2.png" />
         <img src="images/start_dice_roll2.png" />
+        <img src="images/sound-on.svg" />
+        <img src="images/sound-off.svg" />
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script/ludo-game2.js"></script>
