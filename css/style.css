@@ -607,4 +607,9 @@ div#preload {
     border: none;
 }
 
+#owner{
+   position: fixed;
+   bottom: 2%; 
+   width: 100%;
+}
 
