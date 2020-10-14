@@ -905,29 +905,44 @@ function restartGame() {
   } else {
     resetPawn("r", "g", "y", "b");
   }
-  playerNo = 0;
-  winningOrder = [];
-  rndmNo = null;
-  countSix = 0;
-  cut = false;
-  win = false;
-  flag = false;
+  $(diceBoxId).removeClass("startDiceRoll");
+  $(diceBoxId).removeClass("showDice");
+  $(diceBoxId).off();
   players = {
     rPlayer: new Player("out1", "out51"),
     gPlayer: new Player("out14", "out12"),
     yPlayer: new Player("out27", "out25"),
     bPlayer: new Player("out40", "out38"),
   };
-  $(diceBoxId).removeClass("startDiceRoll");
-  $(diceBoxId).removeClass("showDice");
-  $(diceBoxId).off();
   outAreaPos = new Position(52);
+  playerNo = 0; // (red = 1, green = 2, yellow = 3, blue = 4)
+  playerName = null; // store defult playerName
+  diceBoxId = null; // store id value of dice box
+  preDiceBoxId = null; // store id value of previou diceBoxId
+  rndmNo = null; // generate rndmNo after dice is roll
+  countSix = 0;
+  cut = false;
+  win = false;
+  flag = false;
+  winningOrder = [];
   $("home-container").css("display", "block");
 }
 
+
+
 $("#restart").click(function () {
-  restartGame();
+  $("#alertBox").css("display","block")
 });
+
+$("#ok").click(function() {
+  restartGame();
+  $("#alertBox").css("display", "none");
+});
+
+$("#cancel").click(function () {
+   $("#alertBox").css("display", "none");
+});
+
 
 /* Sound Settings */
 

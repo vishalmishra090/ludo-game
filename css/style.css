@@ -10,7 +10,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: brown;
   background-image: url("../images/wood-Board.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
 }
@@ -106,16 +106,16 @@ main div {
   height: 100%;
 }
 
-.in-area .badge-box{
-    position: absolute;
-    width: 76%;
-    height: 76%;
-    background-color: white;
-    top: 12%;
-    left: 12%;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
+.in-area .badge-box {
+  position: absolute;
+  width: 76%;
+  height: 76%;
+  background-color: white;
+  top: 12%;
+  left: 12%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
 }
 
 .row1 .out-area,
@@ -235,18 +235,17 @@ main div {
   position: absolute;
   transform-origin: bottom right;
   padding: 0.5%;
-  
 }
-.win-box .win-pawn-box{
-    width: 100%;
-    height: 100%;
-    position: relative;
+.win-box .win-pawn-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-.win-box .win-pawn-box div{
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    background-color: transparent;
+.win-box .win-pawn-box div {
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  background-color: transparent;
 }
 #win-box1 {
   transform: translate(-50%, -50%) rotate(45deg);
@@ -513,45 +512,46 @@ div#preload {
 
 /* Home box css */
 
-#home-container{
-    display: block;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #B2DFDB;
-    z-index: 1;
+#home-container {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b2dfdb;
+  z-index: 1;
 }
 
-#home{
+#home {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-70%);
+  transform: translate(-50%, -70%);
 }
 
 #game-logo {
-    margin: 50px auto;
-    color: royalblue;
-    font-family: 'Fredoka One', cursive;
-    font-weight: bold;
-    font-size: 30px;
+  margin: 50px auto;
+  color: royalblue;
+  font-family: "Fredoka One", cursive;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-#game-logo img{
-    width: 50px;
-    height: 50px;
+#game-logo img {
+  width: 50px;
+  height: 50px;
 }
 
-#noOfplayerBox{
-    margin: 50px auto;
+#noOfplayerBox {
+  margin: 50px auto;
 }
-.noOfPlayer{
+.noOfPlayer,
+.alertBtn {
   display: inline-block;
   text-align: center;
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
   font-weight: bold;
   font-size: 30px;
   color: red;
@@ -562,58 +562,151 @@ div#preload {
   cursor: pointer;
 }
 
-
-.selected{
+.selected {
   transform: scale(1.2);
-  background-color: lightgreen;  
+  background-color: lightgreen;
   cursor: default;
 }
 
-#startGame{
-   font-family: 'Fredoka One', cursive;
-   display: inline-block;
-   padding: 5px 15px;
-   font-size: 24px;
-   background-color: yellow;
-   color: red;
-   border: 5px solid black;
-   border-radius: 5px;
-   cursor: pointer;
+#startGame {
+  font-family: "Fredoka One", cursive;
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 24px;
+  background-color: yellow;
+  color: red;
+  border: 5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#settingsContiner{
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    text-align: center;
+#settingsContiner {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  text-align: center;
 }
 
-.setting{
-    width: 12.335%;
-    height: 80%;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    border: none;
-    margin: 0 10%;
-    padding: 0;
-    cursor: pointer;
+.setting {
+  width: 12.335%;
+  height: 80%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  border: none;
+  margin: 0 10%;
+  padding: 0;
+  cursor: pointer;
 }
-#sound{
-    background-image: url(../images/sound-on.svg);
+#sound {
+  background-image: url(../images/sound-on.svg);
 }
-#restart{
-    background-image: url(../images/restart.svg);
+#restart {
+  background-image: url(../images/restart.svg);
 }
-.setting:focus{
-    outline: none;
-    border: none;
-}
-
-#owner{
-   position: fixed;
-   bottom: 2%; 
-   width: 100%;
+.setting:focus {
+  outline: none;
+  border: none;
 }
 
+#owner {
+  position: fixed;
+  bottom: 2%;
+  width: 100%;
+}
+
+#alertBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #32e0c4;
+  padding: 10px 20px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#alertHeading {
+  font-size: 25px;
+  font-family: "Fredoka One", cursive;
+  color: red;
+}
+.alertBtn {
+  font-size: 20px;
+  background-color: yellow;
+}
+.alertBtn:hover {
+  background-color: greenyellow;
+}
+.alertBtn:focus {
+  outline: none;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  main {
+    max-width: 1000px;
+  }
+  .game-container {
+    max-width: 700px;
+  }
+  #game-logo {
+    font-size: 60px;
+  }
+
+  #game-logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .noOfPlayer {
+    font-size: 60px;
+  }
+  #startGame {
+    font-size: 60px;
+  }
+  #owner {
+    font-size: 24px;
+  }
+  .alertBtn {
+    font-size: 40px;
+  }
+  #alertHeading {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  main {
+    max-width: 1000px;
+  }
+  .game-container {
+    max-width: 980px;
+  }
+  #game-logo {
+    font-size: 80px;
+  }
+
+  #game-logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .noOfPlayer {
+    font-size: 80px;
+  }
+  #startGame {
+    font-size: 80px;
+  }
+  #owner {
+    font-size: 28px;
+  }
+  .alertBtn {
+    font-size: 50px;
+  }
+  #alertHeading {
+    font-size: 55px;
+  }
+}
