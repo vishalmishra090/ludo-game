@@ -28,6 +28,7 @@ h1 {
 }
 
 main {
+  display: none;
   max-width: 800px;
   height: 100%;
   position: relative;

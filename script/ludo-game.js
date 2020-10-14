@@ -848,6 +848,7 @@ function startGame() {
   } else {
     setPawn("r", "g", "y", "b");
   }
+  $("main").css("display", "block");
   nextPlayer();
 }
 function setPawn(...color) {
@@ -897,6 +898,7 @@ function resetPawn(...color) {
 
 function restartGame() {
   $("#home-container").css("display", "block");
+  $("main").css("display", "none");
   $("." + "badge-box").remove();
   if (noOfPlayer == 2) {
     resetPawn("r", "y");
@@ -925,7 +927,6 @@ function restartGame() {
   win = false;
   flag = false;
   winningOrder = [];
-  $("home-container").css("display", "block");
 }
 
 
