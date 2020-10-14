@@ -332,7 +332,7 @@ function showDice(idValue) {
     [0, 100],
     [100, 100],
   ];
-  // rndmNo = Math.floor(Math.random() * 6);
+  rndmNo = Math.floor(Math.random() * 6);
 
   if ((preDiceBoxId == null || preDiceBoxId == idValue) && rndmNo == 5) {
     countSix++;
