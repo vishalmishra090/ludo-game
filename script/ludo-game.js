@@ -305,7 +305,7 @@ function rollDice(idValue) {
       clearInterval(timerId);
       showDice(idValue);
       if (rndmNo == 5 && countSix != 3) {
-        if (players[playerName].outArea.length == 0) {
+        if (players[playerName].outArea.length == 0 && players[playerName].inArea.length > 0) {
           openPawn();  // autoOpen
         }else{
           openPawn(); // manuallyOpen
