@@ -5,7 +5,7 @@ let preDiceBoxId = null; // store id value of previou diceBoxId
 let rndmNo = null; // generate rndmNo after dice is roll
 let countSix = 0;
 let cut = false;
-let win = false;
+let pass = false;
 let flag = false;
 let noOfPlayer = 4; // by default 4 player
 let winningOrder = [];
@@ -241,15 +241,15 @@ function nextPlayer() {
     return;
   }
   if (playerNo == 4) playerNo = 0;
-  if ((rndmNo != 5 && cut != true && win != true) || countSix == 3) {
+  if ((rndmNo != 5 && cut != true && pass != true) || countSix == 3) {
     playerNo++;
     countSix = 0;
     preDiceBoxId = null;
   }
-  if (cut == true || win == true) {
+  if (cut == true || pass == true) {
     countSix = 0;
     preDiceBoxId = null;
-    win = false;
+    pass = false;
     cut = false;
   }
 
@@ -305,9 +305,14 @@ function rollDice(idValue) {
       clearInterval(timerId);
       showDice(idValue);
       if (rndmNo == 5 && countSix != 3) {
-          openPawn(); 
+        if (players[playerName].outArea.length == 0) {
+          openPawn();  // autoOpen
+        }else{
+          openPawn(); // manuallyOpen
           movePawnOnOutArea();
           updatePlayer();
+        }
+        
       } else if (rndmNo < 5) {
         movePawnOnOutArea();
         movePawnOnPrivateArea();
@@ -332,7 +337,7 @@ function showDice(idValue) {
     [0, 100],
     [100, 100],
   ];
-  rndmNo = Math.floor(Math.random() * 6);
+  // rndmNo = Math.floor(Math.random() * 6);
 
   if ((preDiceBoxId == null || preDiceBoxId == idValue) && rndmNo == 5) {
     countSix++;
@@ -359,7 +364,8 @@ function openPawn() {
     return;
   } else {
     if (outAreaLength == 0) {
-      autoOpen(inAreaLength);
+      setTimeout(()=>autoOpen(inAreaLength),500);
+      
     } else {
       manuallyOpen();
     }
@@ -380,13 +386,13 @@ function manuallyOpen() {
 function autoOpen(inAreaLength) {
   let openClassValue =
     players[playerName].inArea[Math.floor(Math.random() * inAreaLength)];
-  open(openClassValue, 500);
+  open(openClassValue);
 }
 
-function open(openClassValue, time) {
+function open(openClassValue) {
   let startPoint = players[playerName].startPoint;
+  let audioDuration = 500;
 
-  setTimeout(function () {
     removeAllGlow("inArea", "outArea");
     removeAllEvent("inArea", "outArea");
     removeFromArea(openClassValue, playerName, "inArea");
@@ -399,16 +405,15 @@ function open(openClassValue, time) {
     let w = getUpdatedWHoutAreaPos(noInId)[0];
     let h = getUpdatedWHoutAreaPos(noInId)[1];
     if (sound == true) {
+      audioDuration = openAudio.duration * 1000;
       openAudio.play();
     }
     $("#" + startPoint).append(
       `<div class="${openClassValue}" style="width:${w}%; height:${h}%;"></div>`
     );
-  }, time);
-
   setTimeout(function () {
     nextPlayer();
-  }, 700);
+  }, audioDuration);
 }
 
 /* move pawn  on out area*/
@@ -475,6 +480,8 @@ function moveOnOutArea(cValue) {
   let wh = [];
   let moveingClassValue = cValue;
   let color = getColorFromValue(moveingClassValue);
+  let winAudioPlay = false;
+  let passAudioPlay = false;
 
   removeAllGlow("inArea", "outArea", "privateArea");
   removeAllEvent("inArea", "outArea", "privateArea");
@@ -506,16 +513,21 @@ function moveOnOutArea(cValue) {
       removeFromPrivateAreaPos(noInId, moveingClassValue, playerName);
       wh = getUpdatedWHprivateAreaPos(noInId);
       if (checkprivateAreaEnd(oldId)) {
-        win = true;
+        pass = true;
         removeFromArea(moveingClassValue, playerName, "privateArea");
         addToArea(moveingClassValue, playerName, "winArea");
         sendToWinArea(moveingClassValue, playerName, color);
         if (players[playerName].winArea.length == 4) {
           if (sound == true) {
+            winAudioPlay = true;
             winAudio.play();
           }
           updateWinningOrder(playerName);
           showWinningBadge();
+        }
+        if (sound == true && winAudioPlay == false) {
+          passAudio.play();
+          passAudioPlay = true;
         }
       } else {
         noInId++;
@@ -559,10 +571,19 @@ function moveOnOutArea(cValue) {
     if (count == rndmNo) {
       clearInterval(timerId);
       cutPawn(noInId, moveingClassValue);
-      setTimeout(() => nextPlayer(), 500);
+      if (sound == true && winAudioPlay == true) {
+        winAudio.onended = () => {
+          nextPlayer();
+        };
+      } else if (sound == true && passAudioPlay == true) {
+        passAudio.onended = () => {
+          nextPlayer();
+        };
+      } else {
+        setTimeout(() => nextPlayer(), 500);
+      }
     }
   }, 500);
-  jumpAudio.pause();
 }
 
 /*  Move on Private Area */
@@ -605,8 +626,9 @@ function manuallyMoveOnPrivateArea(moveingClassArr) {
     if (idArr.includes(idValue)) {
       continue;
     } else {
-      for (const cValue of players[playerName]
-              .privateAreaPos[getNoFromValue(idValue)]) {
+      for (const cValue of players[playerName].privateAreaPos[
+        getNoFromValue(idValue)
+      ]) {
         if (cValue != classValue) {
           $("." + cValue).css("display", "none");
         }
@@ -642,6 +664,8 @@ function moveOnPrivateArea(cValue) {
   let newId = color + "-out-" + noInId;
   let oldId = newId;
   let wh = [];
+  let winAudioPlay = false;
+  let passAudioPlay = false;
 
   removeAllGlow("inArea", "outArea", "privateArea");
   removeAllEvent("inArea", "outArea", "privateArea");
@@ -654,16 +678,21 @@ function moveOnPrivateArea(cValue) {
     wh = getUpdatedWHprivateAreaPos(noInId);
 
     if (checkprivateAreaEnd(oldId)) {
-      win = true;
+      pass = true;
       removeFromArea(moveingClassValue, playerName, "privateArea");
       addToArea(moveingClassValue, playerName, "winArea");
       sendToWinArea(moveingClassValue, playerName, color);
       if (players[playerName].winArea.length == 4) {
         if (sound == true) {
+          winAudioPlay = true;
           winAudio.play();
         }
         updateWinningOrder(playerName);
         showWinningBadge();
+      }
+      if (sound == true && winAudioPlay == false) {
+        passAudio.play();
+        passAudioPlay = true;
       }
     } else {
       noInId++;
@@ -681,10 +710,19 @@ function moveOnPrivateArea(cValue) {
 
     if (count == rndmNo) {
       clearInterval(timerId);
-      setTimeout(() => nextPlayer(), 500);
+      if (sound == true && winAudioPlay == true) {
+        winAudio.onended = () => {
+          nextPlayer();
+        };
+      } else if (sound == true && passAudioPlay == true) {
+        passAudio.onended = () => {
+          nextPlayer();
+        };
+      } else {
+        setTimeout(() => nextPlayer(), 500);
+      }
     }
   }, 500);
-  jumpAudio.pause();
 }
 
 /* update player */
@@ -731,9 +769,6 @@ function updatePlayer() {
 
 /* Move to Win Area*/
 function sendToWinArea(cValue, pName, color) {
-  if (sound == true) {
-    passAudio.play();
-  }
   $("#" + color + "-win-pawn-box").append(`<div class="${cValue}"></div>`);
   updateWinAreaCss(pName, color);
 }
@@ -921,26 +956,23 @@ function restartGame() {
   rndmNo = null; // generate rndmNo after dice is roll
   countSix = 0;
   cut = false;
-  win = false;
+  pass = false;
   flag = false;
   winningOrder = [];
 }
 
-
-
 $("#restart").click(function () {
-  $("#alertBox").css("display","block")
+  $("#alertBox").css("display", "block");
 });
 
-$("#ok").click(function() {
+$("#ok").click(function () {
   restartGame();
   $("#alertBox").css("display", "none");
 });
 
 $("#cancel").click(function () {
-   $("#alertBox").css("display", "none");
+  $("#alertBox").css("display", "none");
 });
-
 
 /* Sound Settings */
 
