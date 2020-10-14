@@ -305,13 +305,9 @@ function rollDice(idValue) {
       clearInterval(timerId);
       showDice(idValue);
       if (rndmNo == 5 && countSix != 3) {
-        if (players[playerName].inArea.length == 4) {
-          openPawn(); // auto Open
-        } else {
-          openPawn(); // manuelly open
+          openPawn(); 
           movePawnOnOutArea();
           updatePlayer();
-        }
       } else if (rndmNo < 5) {
         movePawnOnOutArea();
         movePawnOnPrivateArea();
@@ -336,7 +332,7 @@ function showDice(idValue) {
     [0, 100],
     [100, 100],
   ];
-  rndmNo = Math.floor(Math.random() * 6);
+  // rndmNo = Math.floor(Math.random() * 6);
 
   if ((preDiceBoxId == null || preDiceBoxId == idValue) && rndmNo == 5) {
     countSix++;
@@ -358,11 +354,12 @@ function showDice(idValue) {
 
 function openPawn() {
   let inAreaLength = players[playerName].inArea.length;
+  let outAreaLength = players[playerName].outArea.length;
   if (inAreaLength == 0) {
     return;
   } else {
-    if (inAreaLength == 4) {
-      autoOpen();
+    if (outAreaLength == 0) {
+      autoOpen(inAreaLength);
     } else {
       manuallyOpen();
     }
@@ -380,9 +377,9 @@ function manuallyOpen() {
   }
 }
 
-function autoOpen() {
+function autoOpen(inAreaLength) {
   let openClassValue =
-    players[playerName].inArea[Math.floor(Math.random() * 4)];
+    players[playerName].inArea[Math.floor(Math.random() * inAreaLength)];
   open(openClassValue, 500);
 }
 
