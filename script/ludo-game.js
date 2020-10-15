@@ -1006,6 +1006,8 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
     elem.msRequestFullscreen();
   }
+  $("#fullscreen").css("display", "none");
+  $("#exitfullscreen").css("display", "inline-block");
 }
 
 function closeFullscreen() {
@@ -1018,6 +1020,8 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) {
     document.msExitFullscreen();
   }
+   $("#exitfullscreen").css("display", "none");
+   $("#fullscreen").css("display", "inline-block");
 }
 
 document.addEventListener("fullscreenchange", (event) => {
