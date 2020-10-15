@@ -581,7 +581,7 @@ div#preload {
   cursor: pointer;
 }
 
-#settingsContiner {
+.settingsContiner {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -605,6 +605,15 @@ div#preload {
 }
 #restart {
   background-image: url(../images/restart.svg);
+}
+#fullscreen {
+  background-image: url(../images/fullscreen.svg);
+  margin: 3% 10% 0%;
+}
+#exitfullscreen {
+  background-image: url(../images/exit-fullscreen.svg);
+  margin: 3% 10% 0%;
+  display: none;
 }
 .setting:focus {
   outline: none;
