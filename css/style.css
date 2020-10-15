@@ -609,6 +609,7 @@ div#preload {
 #fullscreen {
   background-image: url(../images/fullscreen.svg);
   margin: 3% 10% 0%;
+  /* display: none; */
 }
 #exitfullscreen {
   background-image: url(../images/exit-fullscreen.svg);
