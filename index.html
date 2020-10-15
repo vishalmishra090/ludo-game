@@ -15,54 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <script>
-        var elem = document.documentElement;
 
-        function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-                /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) {
-                /* Chrome, Safari & Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                /* IE/Edge */
-                elem.msRequestFullscreen();
-            }
-            $("#fullscreen").css("display", "none");
-            $("#exitfullscreen").css("display", "inline-block");
-        }
-
-        function closeFullscreen() {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-
-            $("#exitfullscreen").css("display", "none");
-            $("#fullscreen").css("display", "inline-block");
-        }
-
-        document.addEventListener('fullscreenchange', (event) => {
-            // document.fullscreenElement will point to the element that
-            // is in fullscreen mode if there is one. If there isn't one,
-            // the value of the property is null.
-            if (document.fullscreenElement) {
-                $("#fullscreen").css("display", "none");
-                $("#exitfullscreen").css("display", "inline-block");
-            } else {
-                $("#exitfullscreen").css("display", "none");
-                $("#fullscreen").css("display", "inline-block");
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -502,8 +455,8 @@
                         </div>
                         <div class="col2 col">
                             <div class="settingsContiner">
-                                <button id="fullscreen" class="setting" onclick="openFullscreen();"></button>
-                                <button id="exitfullscreen" class="setting" onclick="closeFullscreen();"></button>
+                                <button id="fullscreen" class="setting"></button>
+                                <button id="exitfullscreen" class="setting"></button>
                             </div>
                         </div>
                         <div class="col3 col">

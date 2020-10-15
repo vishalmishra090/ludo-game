@@ -992,3 +992,51 @@ $("#sound").click(function () {
     $("#sound").css("background-image", "url(../images/sound-off.svg)");
   }
 });
+
+/* fullsreen */
+
+let elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
+document.addEventListener("fullscreenchange", (event) => {
+  // document.fullscreenElement will point to the element that
+  // is in fullscreen mode if there is one. If there isn't one,
+  // the value of the property is null.
+  if (document.fullscreenElement) {
+    $("#fullscreen").css("display", "none");
+    $("#exitfullscreen").css("display", "inline-block");
+  } else {
+    $("#exitfullscreen").css("display", "none");
+    $("#fullscreen").css("display", "inline-block");
+  }
+});
+
+$("#fullscreen").click(function(){
+  openFullscreen();
+});
+
+$("#exitfullscreen").click(function(){
+  closeFullscreen();
+});
